@@ -1,0 +1,93 @@
+.test-navbar {
+  background-color: #333;
+  padding: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.test-navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.test-navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.test-burger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  padding: 0;
+}
+
+.test-burger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s linear;
+}
+
+/* Burger animation */
+.test-burger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.test-burger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.test-burger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.test-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #444;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.test-menu.open {
+  display: block; /* Show when open */
+}
+
+.test-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.test-nav-list li {
+  margin: 0.5rem 0;
+}
+
+.test-nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.test-nav-list a:hover {
+  background-color: #555;
+}

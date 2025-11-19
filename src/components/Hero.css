@@ -1,8 +1,37 @@
 .hero-section {
-  background: #343a40;
-  color: white;
+  background: #303030;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.animated-name {
+  font-size: 4rem; /* Adjust as needed */
+  font-weight: bold;
+  margin-bottom: 20px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow during animation */
+  color: white;
+}
+
+.animated-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInRise 0.8s forwards;
+}
+
+@keyframes fadeInRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
