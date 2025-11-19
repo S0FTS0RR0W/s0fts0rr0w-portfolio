@@ -1,17 +1,23 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt } from 'react-icons/fa';
-import { DiMongodb, DiPostgresql } from 'react-icons/di';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact, faNodeJs, faJsSquare, faHtml5, faCss3Alt, faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { faLeaf, faDatabase } from '@fortawesome/free-solid-svg-icons'; // faLeaf for MongoDB, faDatabase for PostgreSQL
 
-const skills = [
-  { icon: <FaReact size={50} />, name: 'React' },
-  { icon: <FaNodeJs size={50} />, name: 'Node.js' },
-  { icon: <FaJsSquare size={50} />, name: 'JavaScript' },
-  { icon: <FaHtml5 size={50} />, name: 'HTML5' },
-  { icon: <FaCss3Alt size={50} />, name: 'CSS3' },
-  { icon: <FaGitAlt size={50} />, name: 'Git' },
-  { icon: <DiMongodb size={50} />, name: 'MongoDB' },
-  { icon: <DiPostgresql size={50} />, name: 'PostgreSQL' },
+interface Skill {
+  icon: React.ReactElement;
+  name: string;
+}
+
+const skills: Skill[] = [
+  { icon: <FontAwesomeIcon icon={faReact} size="3x" />, name: 'React' },
+  { icon: <FontAwesomeIcon icon={faNodeJs} size="3x" />, name: 'Node.js' },
+  { icon: <FontAwesomeIcon icon={faJsSquare} size="3x" />, name: 'JavaScript' },
+  { icon: <FontAwesomeIcon icon={faHtml5} size="3x" />, name: 'HTML5' },
+  { icon: <FontAwesomeIcon icon={faCss3Alt} size="3x" />, name: 'CSS3' },
+  { icon: <FontAwesomeIcon icon={faGitAlt} size="3x" />, name: 'Git' },
+  { icon: <FontAwesomeIcon icon={faLeaf} size="3x" />, name: 'MongoDB' }, // Using faLeaf as a common representation for MongoDB
+  { icon: <FontAwesomeIcon icon={faDatabase} size="3x" />, name: 'PostgreSQL' }, // Using faDatabase for PostgreSQL
 ];
 
 const Skills = () => {
