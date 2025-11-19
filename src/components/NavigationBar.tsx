@@ -17,7 +17,7 @@ const TestBurgerMenu = () => {
     <nav className="test-navbar">
       <div className="test-navbar-container">
         <Link to="/" className="test-navbar-brand" onClick={handleLinkClick}>
-          S0FTS0RR0W
+          s0fts0rr0w.com
         </Link>
         <button className="test-burger-button" onClick={toggleMenu} aria-expanded={isOpen}>
           <div className={`test-burger-line ${isOpen ? 'open' : ''}`}></div>

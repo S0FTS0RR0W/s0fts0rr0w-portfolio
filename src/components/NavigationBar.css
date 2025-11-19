@@ -1,24 +1,34 @@
 .test-navbar {
-  background-color: #333;
-  padding: 1rem;
-  color: white;
+  background: linear-gradient(90deg, #1e1e2f, #2c2c3e);
+  padding: 1rem 2rem;
+  color: #f0f0f5;
   position: relative;
   z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid #8be9fd;
 }
 
 .test-navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .test-navbar-brand {
-  color: white;
+  font-family: 'Orbitron', sans-serif;
+  color: #f8f8ff;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 5px #8be9fd;
+  transition: text-shadow 0.3s ease;
+}
+
+.test-navbar-brand:hover {
+  text-shadow: 0 0 10px #50fa7b;
 }
 
 .test-burger-button {
@@ -28,22 +38,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
-  height: 25px;
+  width: 36px;
+  height: 28px;
   padding: 0;
+  transition: transform 0.3s ease;
 }
 
 .test-burger-line {
-  display: block;
   width: 100%;
   height: 3px;
-  background-color: white;
-  transition: all 0.3s linear;
+  background-color: #f8f8ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* Burger animation */
 .test-burger-line.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 .test-burger-line.open:nth-child(2) {
@@ -51,22 +62,23 @@
 }
 
 .test-burger-line.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .test-menu {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #444;
+  background: linear-gradient(180deg, #2c2c3e, #1e1e2f);
   padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  border-top: 1px solid #6272a4;
 }
 
 .test-menu.open {
-  display: block; /* Show when open */
+  display: block;
 }
 
 .test-nav-list {
@@ -77,17 +89,21 @@
 }
 
 .test-nav-list li {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .test-nav-list a {
-  color: white;
+  color: #f8f8ff;
   text-decoration: none;
-  font-size: 1.2rem;
-  display: block;
-  padding: 0.5rem 0;
+  font-size: 1.25rem;
+  padding: 0.75rem 1rem;
+  display: inline-block;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .test-nav-list a:hover {
-  background-color: #555;
+  background-color: #50fa7b;
+  color: #1e1e2f;
+  transform: scale(1.05);
 }
