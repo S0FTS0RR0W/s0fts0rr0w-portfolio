@@ -12,7 +12,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Charlie Brown | Shrine-Grade Dev';
+    document.title = './portfolio.sh';
   }, []);
 
   return (
