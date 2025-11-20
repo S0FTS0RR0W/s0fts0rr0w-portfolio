@@ -57,6 +57,16 @@
 
 .theme-toggle-button:hover {
   color: var(--primary-color);
+  animation: pulse 0.5s infinite alternate; /* Pulse animation on hover */
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 .theme-dropdown-menu {
@@ -98,6 +108,14 @@
   background-color: var(--secondary-color);
   color: var(--background-color);
   font-weight: bold;
+}
+
+.theme-dropdown-menu button svg {
+  transition: transform 0.2s ease;
+}
+
+.theme-dropdown-menu button:hover svg {
+  transform: rotate(15deg); /* Subtle rotation on hover for icons */
 }
 
 .test-burger-button {
