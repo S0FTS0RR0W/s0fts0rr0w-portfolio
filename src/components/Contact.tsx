@@ -1,19 +1,37 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
 import './Contact.css'; // Import the new CSS file
 
 const LinkedinIcon = FaLinkedinIn as any;
 const GithubIcon = FaGithub as any;
 const TwitterIcon = FaTwitter as any;
+const DiscordIcon = FaDiscord as any;
 
 const Contact = () => {
   return (
     <section id="contact" className="py-5 contact-section">
       <Container>
         <h2 className="text-center mb-4">Contact Me</h2>
-        <Row>
-          <Col md={6} className="mx-auto">
+        <Row className="justify-content-center">
+          <Col md={4} className="social-media-box mb-4 mb-md-0">
+            <h3 className="text-center mb-3">Find me on social media</h3>
+            <div className="social-icons-container">
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
+                <LinkedinIcon />
+              </a>
+              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon github">
+                <GithubIcon />
+              </a>
+              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
+                <TwitterIcon />
+              </a>
+              <a href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer" className="social-icon discord">
+                <DiscordIcon />
+              </a>
+            </div>
+          </Col>
+          <Col md={6}>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
@@ -34,22 +52,6 @@ const Contact = () => {
                 Submit
               </Button>
             </Form>
-          </Col>
-        </Row>
-        <Row className="mt-5">
-          <Col md={6} className="mx-auto text-center">
-            <h3>Find me on social media</h3>
-            <div className="social-icons mt-3">
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
-                <LinkedinIcon />
-              </a>
-              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon github">
-                <GithubIcon />
-              </a>
-              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
-                <TwitterIcon />
-              </a>
-            </div>
           </Col>
         </Row>
       </Container>
