@@ -1,18 +1,19 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import './Footer.css'; // Import the new CSS file
 
 const GithubIcon = FaGithub as any;
 const LinkedinIcon = FaLinkedin as any;
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-4">
+    <footer className="app-footer py-4">
       <Container className="text-center">
         <Row>
           <Col>
-            <a href="https://github.com/S0FTS0RR0W" className="text-white me-3"><GithubIcon size={30} /></a>
-            <a href="#" className="text-white"><LinkedinIcon size={30} /></a>
+            <a href="https://github.com/S0FTS0RR0W" className="me-3"><GithubIcon size={30} /></a>
+            <a href="#"><LinkedinIcon size={30} /></a>
           </Col>
         </Row>
         <Row className="mt-3">

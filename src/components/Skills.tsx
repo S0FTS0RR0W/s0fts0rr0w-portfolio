@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faNodeJs, faJsSquare, faHtml5, faCss3Alt, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import { faLeaf, faDatabase } from '@fortawesome/free-solid-svg-icons'; // faLeaf for MongoDB, faDatabase for PostgreSQL
+import './Skills.css'; // Import the new CSS file
 
 interface Skill {
   icon: React.ReactElement;
@@ -22,7 +23,7 @@ const skills: Skill[] = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-5">
+    <section id="skills" className="py-5 skills-section">
       <Container>
         <h2 className="text-center mb-4">Skills</h2>
         <Row className="text-center">

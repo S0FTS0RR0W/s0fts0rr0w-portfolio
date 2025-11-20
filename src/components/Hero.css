@@ -1,5 +1,5 @@
 .hero-section {
-  background: radial-gradient(circle at center, #1e1e2f 0%, #12121a 100%);
+  background: var(--background-color); /* Use theme variable */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
 }
 
 .lead {
-  color:aquamarine
+  color: var(--primary-color); /* Use theme variable */
 }
 
 .animated-name {
@@ -18,8 +18,8 @@
   font-size: 4.5rem;
   font-weight: 900;
   letter-spacing: 0.1em;
-  color: #f8f8ff;
-  text-shadow: 0 0 8px #8be9fd, 0 0 16px #6272a4;
+  color: var(--text-color); /* Use theme variable */
+  text-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--secondary-color); /* Use theme variables */
   display: inline-block;
   white-space: nowrap;
 }
@@ -57,9 +57,9 @@
   font-family: 'Orbitron', sans-serif;
   font-size: 4rem;
   font-weight: 900;
-  color: #f8f8ff;
-  text-shadow: 0 0 8px #8be9fd, 0 0 16px #6272a4;
-  border-right: 3px solid #8be9fd;
+  color: var(--text-color); /* Use theme variable */
+  text-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--secondary-color); /* Use theme variables */
+  border-right: 3px solid var(--primary-color); /* Use theme variable */
   white-space: nowrap;
 }
 
@@ -69,5 +69,5 @@
 
 @keyframes blinkCursor {
   from, to { border-color: transparent; }
-  50% { border-color: #8be9fd; }
+  50% { border-color: var(--primary-color); } /* Use theme variable */
 }

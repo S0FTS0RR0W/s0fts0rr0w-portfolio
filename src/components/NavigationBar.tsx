@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css';
+import { useTheme } from '../context/ThemeContext'; // Import useTheme
 
 interface NavigationBarProps {
   isMenuOpen: boolean;
@@ -8,6 +9,8 @@ interface NavigationBarProps {
 }
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const { darkMode, toggleDarkMode } = useTheme(); // Use the theme context
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -33,6 +36,11 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
             <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
             <li><Link to="/projects" onClick={handleLinkClick}>Projects</Link></li>
             <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+            <li>
+              <button onClick={toggleDarkMode} className="theme-toggle-button">
+                {darkMode ? '☀️' : '🌙'} {/* Sun for light, Moon for dark */}
+              </button>
+            </li>
           </ul>
         </div>
       </div>

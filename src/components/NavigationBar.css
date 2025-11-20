@@ -1,15 +1,15 @@
 .test-navbar {
-  background-color: rgba(30, 30, 47, 0.6);
+  background-color: var(--header-background);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   padding: 1rem 2rem;
-  color: #f0f0f5;
+  color: var(--text-color);
   position: fixed;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  border-bottom: 2px solid #8be9fd;
+  border-bottom: 2px solid var(--primary-color);
   width: 100%;
-  transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 .test-navbar-container {
   display: flex;
@@ -21,17 +21,17 @@
 
 .test-navbar-brand {
   font-family: 'Orbitron', sans-serif;
-  color: #f8f8ff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 1.5px;
-  text-shadow: 0 0 5px #8be9fd;
-  transition: text-shadow 0.3s ease;
+  text-shadow: 0 0 5px var(--primary-color);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 .test-navbar-brand:hover {
-  text-shadow: 0 0 10px #5078faaf;
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
 .test-burger-button {
@@ -50,7 +50,7 @@
 .test-burger-line {
   width: 100%;
   height: 3px;
-  background-color: #f8f8ff;
+  background-color: var(--text-color);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -76,13 +76,13 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: linear-gradient(180deg, rgba(44, 44, 62, 0.6), rgba(30, 30, 47, 0.6));
+  background: var(--header-background);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   padding: 0; /* Padding will be handled by max-height transition */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
-  border-top: 1px solid rgba(98, 114, 164, 0.5);
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  border-top: 1px solid var(--border-color);
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out, background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
 .test-menu.open {
@@ -103,17 +103,17 @@
 }
 
 .test-nav-list a {
-  color: #f8f8ff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.25rem;
   padding: 0.75rem 1rem;
   display: inline-block;
   border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
 .test-nav-list a:hover {
-  background-color: #8b50fa6b;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   transform: scale(1.05);
 }

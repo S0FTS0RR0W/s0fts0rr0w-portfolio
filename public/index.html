@@ -27,6 +27,26 @@
     <title>React App</title>
   </head>
   <body>
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('darkMode');
+          if (savedTheme) {
+            document.body.setAttribute('data-theme', JSON.parse(savedTheme) ? 'dark' : 'light');
+          } else {
+            // Optional: Set a default theme if nothing is saved, e.g., based on system preference
+            // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            //   document.body.setAttribute('data-theme', 'dark');
+            // } else {
+            //   document.body.setAttribute('data-theme', 'light');
+            // }
+            document.body.setAttribute('data-theme', 'light'); // Default to light if no preference
+          }
+        } catch (e) {
+          console.error("Error reading theme from localStorage", e);
+        }
+      })();
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

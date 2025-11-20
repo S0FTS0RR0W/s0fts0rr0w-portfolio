@@ -1,0 +1,18 @@
+.skills-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-section h2 {
+  color: var(--text-color);
+}
+
+.skills-section p {
+  color: var(--text-color);
+}
+
+.skills-section svg {
+  color: var(--primary-color); /* Color for FontAwesome icons */
+  transition: color 0.3s ease;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import './Contact.css'; // Import the new CSS file
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-5 bg-light">
+    <section id="contact" className="py-5 contact-section">
       <Container>
         <h2 className="text-center mb-4">Contact Me</h2>
         <Row>

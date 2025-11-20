@@ -1,0 +1,14 @@
+.app-footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-footer a {
+  color: var(--footer-text-color);
+  transition: color 0.3s ease;
+}
+
+.app-footer a:hover {
+  color: var(--primary-color);
+}

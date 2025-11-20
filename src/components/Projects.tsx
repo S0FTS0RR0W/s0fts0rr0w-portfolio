@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
+import './Projects.css'; // Import the new CSS file
 
 interface Project {
   title: string;
@@ -44,7 +45,7 @@ const Projects = () => {
 
   if (loading) {
     return (
-      <section id="projects" className="py-5 bg-light">
+      <section id="projects" className="py-5 projects-section">
         <Container>
           <h2 className="text-center mb-4">Projects</h2>
           <p className="text-center">Loading projects...</p>
@@ -55,7 +56,7 @@ const Projects = () => {
 
   if (error) {
     return (
-      <section id="projects" className="py-5 bg-light">
+      <section id="projects" className="py-5 projects-section">
         <Container>
           <h2 className="text-center mb-4">Projects</h2>
           <p className="text-center text-danger">Error loading projects: {error}</p>
@@ -65,7 +66,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-5 bg-light">
+    <section id="projects" className="py-5 projects-section">
       <Container>
         <h2 className="text-center mb-4">Projects</h2>
         <Row>

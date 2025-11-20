@@ -1,0 +1,13 @@
+.projects-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projects-section h2 {
+  color: var(--text-color);
+}
+
+.projects-section p {
+  color: var(--text-color);
+}

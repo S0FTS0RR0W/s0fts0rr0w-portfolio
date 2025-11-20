@@ -1,3 +1,27 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --card-background: #f8f9fa;
+  --border-color: #dee2e6;
+  --header-background: #f8f9fa;
+  --footer-background: #343a40;
+  --footer-text-color: #ffffff;
+}
+
+body[data-theme='dark'] {
+  --background-color: #282c34;
+  --text-color: #e0e0e0;
+  --primary-color: #61dafb;
+  --secondary-color: #adb5bd;
+  --card-background: #3c4049;
+  --border-color: #495057;
+  --header-background: #20232a;
+  --footer-background: #20232a;
+  --footer-text-color: #e0e0e0;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Mono', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
@@ -5,9 +29,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px; /* Adjust as needed */
+  color: var(--text-color); /* Ensure visibility in both themes */
+}
+
+.theme-toggle-button:hover {
+  opacity: 0.8;
 }
