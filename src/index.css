@@ -1,24 +1,24 @@
 :root {
-  --background-color: #ffffff;
+  --background-color: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%);
   --text-color: #333333;
   --primary-color: #007bff;
   --secondary-color: #6c757d;
-  --card-background: #f8f9fa;
+  --card-background: #ffffff;
   --border-color: #dee2e6;
-  --header-background: #f8f9fa;
+  --header-background: rgba(255, 255, 255, 0.8);
   --footer-background: #343a40;
   --footer-text-color: #ffffff;
 }
 
 body[data-theme='dark'] {
-  --background-color: #282c34;
+  --background-color: linear-gradient(135deg, #2c3e50 0%, #212529 100%);
   --text-color: #e0e0e0;
   --primary-color: #61dafb;
   --secondary-color: #adb5bd;
-  --card-background: #3c4049;
+  --card-background: #343a40;
   --border-color: #495057;
-  --header-background: #20232a;
-  --footer-background: #20232a;
+  --header-background: rgba(33, 37, 41, 0.8);
+  --footer-background: #212529;
   --footer-text-color: #e0e0e0;
 }
 
@@ -29,9 +29,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
+  background: var(--background-color); /* Use background instead of background-color for gradients */
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 code {

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css';
-import { useTheme } from '../context/ThemeContext'; // Import useTheme
+import { useTheme } from '../context/ThemeContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 interface NavigationBarProps {
   isMenuOpen: boolean;
@@ -9,7 +11,7 @@ interface NavigationBarProps {
 }
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
-  const { darkMode, toggleDarkMode } = useTheme(); // Use the theme context
+  const { darkMode, toggleDarkMode } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,7 +40,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
             <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
             <li>
               <button onClick={toggleDarkMode} className="theme-toggle-button">
-                {darkMode ? '☀️' : '🌙'} {/* Sun for light, Moon for dark */}
+                <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
               </button>
             </li>
           </ul>
