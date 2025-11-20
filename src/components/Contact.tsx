@@ -1,6 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
 import './Contact.css'; // Import the new CSS file
+
+const LinkedinIcon = FaLinkedinIn as any;
+const GithubIcon = FaGithub as any;
+const TwitterIcon = FaTwitter as any;
 
 const Contact = () => {
   return (
@@ -29,6 +34,22 @@ const Contact = () => {
                 Submit
               </Button>
             </Form>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col md={6} className="mx-auto text-center">
+            <h3>Find me on social media</h3>
+            <div className="social-icons mt-3">
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
+                <LinkedinIcon />
+              </a>
+              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon github">
+                <GithubIcon />
+              </a>
+              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
+                <TwitterIcon />
+              </a>
+            </div>
           </Col>
         </Row>
       </Container>
