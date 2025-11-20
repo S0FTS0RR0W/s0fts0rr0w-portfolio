@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 
-const TestBurgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface NavigationBarProps {
+  isMenuOpen: boolean;
+  setIsMenuOpen: (isOpen: boolean) => void;
+}
 
+const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); // Close menu on link click
+    setIsMenuOpen(false); // Close menu on link click
   };
 
   return (
@@ -19,12 +22,12 @@ const TestBurgerMenu = () => {
         <Link to="/" className="test-navbar-brand" onClick={handleLinkClick}>
           s0fts0rr0w.com
         </Link>
-        <button className="test-burger-button" onClick={toggleMenu} aria-expanded={isOpen}>
-          <div className={`test-burger-line ${isOpen ? 'open' : ''}`}></div>
-          <div className={`test-burger-line ${isOpen ? 'open' : ''}`}></div>
-          <div className={`test-burger-line ${isOpen ? 'open' : ''}`}></div>
+        <button className="test-burger-button" onClick={toggleMenu} aria-expanded={isMenuOpen}>
+          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
         </button>
-        <div className={`test-menu ${isOpen ? 'open' : ''}`}>
+        <div className={`test-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="test-nav-list">
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
             <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
@@ -37,4 +40,4 @@ const TestBurgerMenu = () => {
   );
 };
 
-export default TestBurgerMenu;
+export default NavigationBar;

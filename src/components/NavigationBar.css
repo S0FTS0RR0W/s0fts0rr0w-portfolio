@@ -1,5 +1,7 @@
 .test-navbar {
-  background: linear-gradient(90deg, #1e1e2f, #2c2c3e);
+  background-color: rgba(30, 30, 47, 0.6);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   padding: 1rem 2rem;
   color: #f0f0f5;
   position: fixed;
@@ -8,7 +10,6 @@
   border-bottom: 2px solid #8be9fd;
   width: 100%;
 }
-
 .test-navbar-container {
   display: flex;
   justify-content: space-between;
@@ -72,10 +73,12 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: linear-gradient(180deg, #2c2c3e00, #1e1e2f);
+  background: linear-gradient(180deg, rgba(44, 44, 62, 0.6), rgba(30, 30, 47, 0.6));
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   padding: 1rem 0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
-  border-top: 1px solid #6272a4;
+  border-top: 1px solid rgba(98, 114, 164, 0.5);
 }
 
 .test-menu.open {
