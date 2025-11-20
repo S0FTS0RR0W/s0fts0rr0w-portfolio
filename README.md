@@ -65,3 +65,19 @@ Your app is ready to be deployed!
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 This command will remove the single build dependency from your project and allow you to customize the build process.
+
+## Deployment
+
+After running `npm run build`, the optimized production-ready files will be located in the `build` directory. You can deploy these static files to any static hosting service.
+
+For local testing of the production build, you can use a package like `serve`:
+
+1.  Install `serve` globally (if you haven't already):
+    ```sh
+    npm install -g serve
+    ```
+2.  Navigate to your project's root directory and run:
+    ```sh
+    serve -s build
+    ```
+    This will serve your built application from the `build` directory.
