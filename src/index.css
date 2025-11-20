@@ -8,6 +8,7 @@
   --header-background: rgba(255, 255, 255, 0.8);
   --footer-background: #343a40;
   --footer-text-color: #ffffff;
+  --primary-color-rgb: 0, 123, 255;
 }
 
 body[data-theme='dark'] {
@@ -20,6 +21,7 @@ body[data-theme='dark'] {
   --header-background: rgba(33, 37, 41, 0.8);
   --footer-background: #212529;
   --footer-text-color: #e0e0e0;
+  --primary-color-rgb: 97, 218, 251;
 }
 
 body {

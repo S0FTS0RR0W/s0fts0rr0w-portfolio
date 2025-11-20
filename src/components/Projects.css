@@ -11,3 +11,18 @@
 .projects-section p {
   color: var(--text-color);
 }
+
+/* Dark mode styles for ProjectCard */
+body[data-theme='dark'] .project-card {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+body[data-theme='dark'] .project-card .card-title {
+  color: var(--text-color);
+}
+
+body[data-theme='dark'] .project-card .card-text {
+  color: var(--text-color);
+}

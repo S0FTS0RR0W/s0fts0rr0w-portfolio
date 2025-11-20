@@ -14,7 +14,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imgUrl, projectUrl, githubUrl }) => {
   return (
-    <Card className="h-100">
+    <Card className="h-100 project-card">
       <Card.Img variant="top" src={imgUrl} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
