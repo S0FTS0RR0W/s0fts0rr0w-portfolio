@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import './About.css';
 
 const About = () => {
   return (
-    <section id="about" className="py-5">
+    <section id="about" className="about-section">
       <Container>
-        <h2 className="text-center mb-4">About Me</h2>
+        <h2 className="text-center">About Me</h2>
         <Row>
-          <Col md={8} className="mx-auto text-center">
+          <Col md={8} className="mx-auto">
             <p className="lead">
               I am a passionate and creative full-stack developer with a knack for building elegant and efficient solutions. With a strong foundation in modern web technologies, I specialize in creating dynamic and responsive web applications.
             </p>

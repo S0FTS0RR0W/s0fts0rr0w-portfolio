@@ -2,17 +2,18 @@
   background: linear-gradient(90deg, #1e1e2f, #2c2c3e);
   padding: 1rem 2rem;
   color: #f0f0f5;
-  position: relative;
+  position: fixed;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #8be9fd;
+  width: 100%;
 }
 
 .test-navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: auto;
   margin: 0 auto;
 }
 
