@@ -12,7 +12,7 @@ const Footer = () => {
         <Row>
           <Col>
             <a href="https://github.com/S0FTS0RR0W" className="text-white me-3"><GithubIcon size={30} /></a>
-            <a href="testicles" className="text-white"><LinkedinIcon size={30} /></a>
+            <a href="#" className="text-white"><LinkedinIcon size={30} /></a>
           </Col>
         </Row>
         <Row className="mt-3">

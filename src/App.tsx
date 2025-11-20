@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -9,6 +9,10 @@ import ProjectsPage from './pages/Projects';
 import ContactPage from './pages/Contact';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Charlie Brown | Shrine-Grade Dev';
+  }, []);
+
   return (
     <div className="App">
       <NavigationBar />

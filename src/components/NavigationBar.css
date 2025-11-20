@@ -28,7 +28,7 @@
 }
 
 .test-navbar-brand:hover {
-  text-shadow: 0 0 10px #50fa7b;
+  text-shadow: 0 0 10px #5078faaf;
 }
 
 .test-burger-button {
@@ -71,7 +71,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: linear-gradient(180deg, #2c2c3e, #1e1e2f);
+  background: linear-gradient(180deg, #2c2c3e00, #1e1e2f);
   padding: 1rem 0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
   border-top: 1px solid #6272a4;
@@ -103,7 +103,7 @@
 }
 
 .test-nav-list a:hover {
-  background-color: #50fa7b;
-  color: #1e1e2f;
+  background-color: #8b50fa6b;
+  color: #ffffff;
   transform: scale(1.05);
 }
