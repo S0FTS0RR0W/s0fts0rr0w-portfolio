@@ -18,16 +18,16 @@ const Contact = () => {
             <h3 className="text-center mb-3">Find me on social media</h3>
             <div className="social-icons-container">
               <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
-                <LinkedinIcon />
+                <LinkedinIcon /><span className="social-text">LinkedIn</span>
               </a>
               <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon github">
-                <GithubIcon />
+                <GithubIcon /><span className="social-text">GitHub</span>
               </a>
               <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
-                <TwitterIcon />
+                <TwitterIcon /><span className="social-text">Twitter</span>
               </a>
               <a href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer" className="social-icon discord">
-                <DiscordIcon />
+                <DiscordIcon /><span className="social-text">Discord</span>
               </a>
             </div>
           </Col>

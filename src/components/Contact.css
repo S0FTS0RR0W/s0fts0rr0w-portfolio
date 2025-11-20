@@ -63,11 +63,12 @@
 .social-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 24px;
+  justify-content: flex-start; /* Align content to the start for text */
+  width: 200px; /* Make them horizontally longer */
+  height: 60px; /* Adjust height */
+  padding: 0 20px; /* Add padding for text */
+  border-radius: 8px; /* Make icons rectangular */
+  font-size: 28px; /* Increase icon size */
   color: var(--text-color);
   background: var(--background-color); /* Use background-color for icon background */
   border: 1px solid var(--border-color);
@@ -85,10 +86,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: var(--icon-gradient); /* Use a variable for the gradient */
   opacity: 0;
   transition: all 0.3s ease;
   z-index: -1;
+  border-radius: 8px; /* Match the icon's border-radius */
 }
 
 .social-icon:hover {
@@ -101,23 +103,25 @@
   opacity: 1;
 }
 
-/* Specific social icon colors (optional, if not using gradient) */
-.social-icon.linkedin:hover {
-  background: #0077b5; /* LinkedIn blue */
-  color: #ffffff;
+.social-text {
+  font-size: 18px; /* Adjust font size as needed */
+  margin-left: 15px; /* Space between icon and text */
+  color: var(--text-color); /* Ensure text color adapts to theme */
 }
 
-.social-icon.github:hover {
-  background: #333333; /* GitHub dark */
-  color: #ffffff;
+/* Specific social icon colors (now using gradients) */
+.social-icon.linkedin {
+  --icon-gradient: linear-gradient(45deg, #000000, #0e76a8); /* LinkedIn blue */
 }
 
-.social-icon.twitter:hover {
-  background: #1DA1F2; /* Twitter blue */
-  color: #ffffff;
+.social-icon.github {
+  --icon-gradient: linear-gradient(45deg, #000000, #444444); /* GitHub dark */
 }
 
-.social-icon.discord:hover {
-  background: #7289DA; /* Discord purple */
-  color: #ffffff;
+.social-icon.twitter {
+  --icon-gradient: linear-gradient(45deg, #000000, #1a91da); /* Twitter blue */
+}
+
+.social-icon.discord {
+  --icon-gradient: linear-gradient(45deg, #000000, #6a7ecb); /* Discord blurple */
 }

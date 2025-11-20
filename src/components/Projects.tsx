@@ -72,7 +72,7 @@ const Projects = () => {
         <Row>
           {githubProjects.length > 0 ? (
             githubProjects.map((project, index) => (
-              <Col md={4} key={index} className="mb-4">
+              <Col md={6} key={index} className="mb-4">
                 <ProjectCard {...project} />
               </Col>
             ))
