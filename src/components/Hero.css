@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.lead {
+  color:aquamarine
+}
+
 .animated-name {
   font-family: 'Orbitron', sans-serif;
   font-size: 4.5rem;
