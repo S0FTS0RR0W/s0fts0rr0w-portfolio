@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 import { useTheme } from '../context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faDesktop } from '@fortawesome/free-solid-svg-icons'; // Import faDesktop for system theme
 
 interface NavigationBarProps {
   isMenuOpen: boolean;
@@ -11,14 +11,33 @@ interface NavigationBarProps {
 }
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode, themePreference, setThemePreference } = useTheme();
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsThemeMenuOpen(false); // Close theme menu if burger menu is toggled
   };
 
   const handleLinkClick = () => {
     setIsMenuOpen(false); // Close menu on link click
+    setIsThemeMenuOpen(false); // Close theme menu on link click
+  };
+
+  const toggleThemeMenu = () => {
+    setIsThemeMenuOpen(prev => !prev);
+  };
+
+  const handleThemeSelect = (preference: 'light' | 'dark' | 'system') => {
+    setThemePreference(preference);
+    setIsThemeMenuOpen(false); // Close menu after selection
+  };
+
+  const getCurrentThemeIcon = () => {
+    if (themePreference === 'system') {
+      return faDesktop;
+    }
+    return darkMode ? faMoon : faSun;
   };
 
   return (
@@ -27,22 +46,37 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
         <Link to="/" className="test-navbar-brand" onClick={handleLinkClick}>
           s0fts0rr0w.com
         </Link>
-        <button className="test-burger-button" onClick={toggleMenu} aria-expanded={isMenuOpen}>
-          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
-          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
-          <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
-        </button>
+        <div className="navbar-controls">
+          <div className="theme-menu-container">
+            <button onClick={toggleThemeMenu} className="theme-toggle-button">
+              <FontAwesomeIcon icon={getCurrentThemeIcon()} />
+            </button>
+            {isThemeMenuOpen && (
+              <div className="theme-dropdown-menu">
+                <button onClick={() => handleThemeSelect('light')} className={themePreference === 'light' ? 'active' : ''}>
+                  <FontAwesomeIcon icon={faSun} /> Light
+                </button>
+                <button onClick={() => handleThemeSelect('dark')} className={themePreference === 'dark' ? 'active' : ''}>
+                  <FontAwesomeIcon icon={faMoon} /> Dark
+                </button>
+                <button onClick={() => handleThemeSelect('system')} className={themePreference === 'system' ? 'active' : ''}>
+                  <FontAwesomeIcon icon={faDesktop} /> System
+                </button>
+              </div>
+            )}
+          </div>
+          <button className="test-burger-button" onClick={toggleMenu} aria-expanded={isMenuOpen}>
+            <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
+            <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
+            <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
+          </button>
+        </div>
         <div className={`test-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul className="test-nav-list">
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
             <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
             <li><Link to="/projects" onClick={handleLinkClick}>Projects</Link></li>
             <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
-            <li>
-              <button onClick={toggleDarkMode} className="theme-toggle-button">
-                <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
-              </button>
-            </li>
           </ul>
         </div>
       </div>

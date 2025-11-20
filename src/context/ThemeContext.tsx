@@ -1,8 +1,11 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
+type ThemePreference = 'light' | 'dark' | 'system';
+
 interface ThemeContextType {
   darkMode: boolean;
-  toggleDarkMode: () => void;
+  themePreference: ThemePreference;
+  setThemePreference: (preference: ThemePreference) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -12,22 +15,47 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const savedTheme = localStorage.getItem('darkMode');
-    return savedTheme ? JSON.parse(savedTheme) : false;
+  const [themePreference, setThemePreference] = useState<ThemePreference>(() => {
+    const savedPreference = localStorage.getItem('themePreference');
+    return (savedPreference as ThemePreference) || 'system';
   });
 
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(prevMode => !prevMode);
-  };
+  // Effect to apply theme based on preference
+  useEffect(() => {
+    const applyTheme = () => {
+      localStorage.setItem('themePreference', themePreference);
+      if (themePreference === 'system') {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setDarkMode(prefersDarkMode);
+        document.body.setAttribute('data-theme', prefersDarkMode ? 'dark' : 'light');
+      } else {
+        const isDark = themePreference === 'dark';
+        setDarkMode(isDark);
+        document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      }
+    };
+
+    applyTheme();
+  }, [themePreference]);
+
+  // Effect to listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => {
+      if (themePreference === 'system') {
+        setDarkMode(mediaQuery.matches);
+        document.body.setAttribute('data-theme', mediaQuery.matches ? 'dark' : 'light');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [themePreference]); // Re-run if preference changes to/from 'system'
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, themePreference, setThemePreference }}>
       {children}
     </ThemeContext.Provider>
   );

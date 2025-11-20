@@ -34,6 +34,72 @@
   text-shadow: 0 0 10px var(--primary-color);
 }
 
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between theme menu and burger button */
+}
+
+.theme-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  color: var(--primary-color);
+}
+
+.theme-dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the toggle button */
+  right: 0;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  z-index: 1001; /* Ensure it's above other content */
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-dropdown-menu button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.theme-dropdown-menu button.active {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
 .test-burger-button {
   background: none;
   border: none;
