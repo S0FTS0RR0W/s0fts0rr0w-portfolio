@@ -20,13 +20,13 @@ const Contact = () => {
               <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
                 <LinkedinIcon /><span className="social-text">LinkedIn</span>
               </a>
-              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon github">
+              <a href="https://github.com/S0FTS0RR0W" target="_blank" rel="noopener noreferrer" className="social-icon github">
                 <GithubIcon /><span className="social-text">GitHub</span>
               </a>
-              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
+              <a href="https://x.com/OverkillBonds" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
                 <TwitterIcon /><span className="social-text">Twitter</span>
               </a>
-              <a href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer" className="social-icon discord">
+              <a href="https://discord.com/users/1114472241497911336" target="_blank" rel="noopener noreferrer" className="social-icon discord">
                 <DiscordIcon /><span className="social-text">Discord</span>
               </a>
             </div>
