@@ -71,3 +71,15 @@
   from, to { border-color: transparent; }
   50% { border-color: var(--primary-color); } /* Use theme variable */
 }
+
+.btn {
+  background-image: linear-gradient(to right, #000000, #6366F1);
+  border: none; /* remove default border */
+}
+
+.btn:hover {
+   background-position: right center; /* Change the gradient position on hover */
+    filter: brightness(1.1); /* Slightly brighten on hover */
+    transition: all 0.3s ease;
+    background-size: 200% auto; /* For background-position animation */
+}

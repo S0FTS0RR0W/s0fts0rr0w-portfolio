@@ -1,7 +1,7 @@
 :root {
   --background-color: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%);
   --text-color: #333333;
-  --primary-color: #007bff;
+  --primary-color: linear-gradient(45deg, #000, #007bff);
   --secondary-color: #6c757d;
   --card-background: #ffffff;
   --border-color: #dee2e6;
@@ -14,7 +14,7 @@
 body[data-theme='dark'] {
   --background-color: linear-gradient(135deg, #2c3e50 0%, #212529 100%);
   --text-color: #e0e0e0;
-  --primary-color: #61dafb;
+  --primary-color:#61dafb;
   --secondary-color: #adb5bd;
   --card-background: #343a40;
   --border-color: #495057;
