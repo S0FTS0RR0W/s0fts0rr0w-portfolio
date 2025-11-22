@@ -77,6 +77,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
             <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
             <li><Link to="/projects" onClick={handleLinkClick}>Projects</Link></li>
             <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+            <li><Link to="/discord-bot" onClick={handleLinkClick}>Summurai Discord Bot</Link></li>
           </ul>
         </div>
       </div>

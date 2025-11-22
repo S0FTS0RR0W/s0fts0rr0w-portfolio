@@ -1,0 +1,120 @@
+/* src/components/Discord.css */
+
+/* Define variables for hover colors within this component for theme-awareness */
+:root {
+    --primary-hover-color-light: #0056b3; /* Darker blue for light theme primary button hover */
+    --card-shadow-light: rgba(0, 0, 0, 0.1); /* Light theme box-shadow */
+    --card-shadow-light-hover: rgba(0, 0, 0, 0.2); /* Light theme box-shadow on hover */
+}
+
+body[data-theme='dark'] {
+    --primary-hover-color-dark: #4ba6c4; /* Darker cyan for dark theme primary button hover */
+    --card-shadow-dark: rgba(255, 255, 255, 0.08); /* Dark theme box-shadow */
+    --card-shadow-dark-hover: rgba(255, 255, 255, 0.15); /* Dark theme box-shadow on hover */
+}
+
+
+.discord-section {
+    padding: 120px 0 60px 0; /* Added top padding to account for fixed navbar */
+    background: var(--background-color); /* Inherit from global theme */
+    color: var(--text-color); /* Inherit from global theme */
+}
+
+.discord-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow-light); /* Use theme-aware box-shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body[data-theme='dark'] .discord-card {
+    box-shadow: 0 4px 8px var(--card-shadow-dark); /* Dark theme box-shadow */
+    color: #f0f0f0; /* Brighter text color for dark mode card content */
+}
+
+
+.discord-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--card-shadow-light-hover); /* Use theme-aware box-shadow on hover */
+}
+
+body[data-theme='dark'] .discord-card:hover {
+    box-shadow: 0 8px 16px var(--card-shadow-dark-hover); /* Dark theme box-shadow on hover */
+}
+
+.discord-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.discord-card .card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.discord-card h4 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+body[data-theme='dark'] .discord-card h4 {
+    color: #f0f0f0; /* Brighter heading color for dark mode card content */
+}
+
+.discord-card ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05rem;
+}
+
+.discord-card ul li::before {
+    content: '*'; /* Rocket emoji or any other icon */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.discord-card .btn-primary {
+    background-image: linear-gradient(45deg, black, var(--primary-color));
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-size: 200% auto; /* For background-position animation */
+}
+
+.discord-card .btn-primary:hover {
+    background-position: right center; /* Change the gradient position on hover */
+    filter: brightness(1.1); /* Slightly brighten on hover */
+}
+
+/* For the invite button, using Discord-like blurple gradients */
+.discord-card .btn-success {
+    background-image: linear-gradient(45deg, black, #5865F2); /* Discord blurple gradient */
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-size: 200% auto; /* For background-position animation */
+}
+
+.discord-card .btn-success:hover {
+    background-position: right center; /* Change the gradient position on hover */
+    filter: brightness(1.1); /* Slightly brighten on hover */
+}
+
+/* Ensure text in buttons uses the correct color */
+.discord-card .btn {
+    color: #fff !important;
+}
