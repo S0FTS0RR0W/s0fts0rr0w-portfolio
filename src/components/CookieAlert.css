@@ -1,0 +1,60 @@
+/* CookieAlert.css */
+
+.cookie-alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 90%;
+    flex-wrap: wrap;
+}
+
+.cookie-alert p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.cookie-alert button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.cookie-alert button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .cookie-alert {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .cookie-alert p {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .cookie-alert button {
+        width: 100%;
+    }
+}
