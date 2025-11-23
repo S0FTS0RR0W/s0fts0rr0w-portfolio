@@ -201,3 +201,17 @@
   color: var(--background-color);
   transform: scale(1.05);
 }
+
+/* Dark mode burger menu link styles for hover animation */
+body[data-theme='dark'] .test-nav-list a {
+  background-color: transparent; /* Ensure no background color initially */
+  background-image: linear-gradient(to right, #266777, var(--primary-color));
+  background-size: 0% 100%; /* Start with zero width */
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+body[data-theme='dark'] .test-nav-list a:hover {
+  background-size: 100% 100%; /* Expand to full width on hover */
+  color: #ffffff; /* Ensure text is white on gradient */
+}

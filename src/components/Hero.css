@@ -72,14 +72,34 @@
   50% { border-color: var(--primary-color); } /* Use theme variable */
 }
 
+/* Updated button styles */
 .btn {
-  background-image: linear-gradient(to right, #000000, #6366F1);
-  border: none; /* remove default border */
+  position: relative;
+  background-color: #58323200;
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: filter 0.3s ease;
 }
 
+/* Underline effect using ::after */
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00000000; /* Use theme variable */
+  transition: width 0.3s ease;
+}
+
+/* Hover effect */
 .btn:hover {
-   background-position: right center; /* Change the gradient position on hover */
-    filter: brightness(1.1); /* Slightly brighten on hover */
-    transition: all 0.3s ease;
-    background-size: 200% auto; /* For background-position animation */
+  filter: brightness(1.1); /* Slightly brighten on hover */
+}
+
+.btn:hover::after {
+  width: 100%; /* underline expands left → right */
 }

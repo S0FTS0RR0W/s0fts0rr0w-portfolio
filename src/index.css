@@ -1,7 +1,7 @@
 :root {
   --background-color: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%);
   --text-color: #333333;
-  --primary-color: linear-gradient(45deg, #000, #007bff);
+  --primary-color: #00000000;
   --secondary-color: #6c757d;
   --card-background: #ffffff;
   --border-color: #dee2e6;
