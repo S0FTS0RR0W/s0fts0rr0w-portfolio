@@ -9,6 +9,8 @@ import ProjectsPage from './pages/Projects';
 import ContactPage from './pages/Contact';
 import { ThemeProvider } from './context/ThemeContext';
 import DiscordBot from './pages/DiscordBot';
+import Api from './pages/Api';
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,6 +30,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/discord-bot" element={<DiscordBot />} />
+            <Route path="/api" element={<Api />} />
           </Routes>
         </main>
         <Footer />
