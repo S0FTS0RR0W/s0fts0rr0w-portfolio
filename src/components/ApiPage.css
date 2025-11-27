@@ -1,0 +1,27 @@
+#api-page {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+#api-page .card {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+#api-page .card-title {
+  color: #007bff;
+}
+
+#api-page h2, #api-page h4 {
+  color: #343a40;
+}
+
+#api-page ul {
+  padding-left: 20px;
+}
+
+#api-page li {
+  margin-bottom: 10px;
+}
