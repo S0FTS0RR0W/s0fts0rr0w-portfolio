@@ -32,6 +32,16 @@
   }
 }
 
+/* Card hover/focus animation */
+.project-card {
+  transition: transform var(--motion-duration) var(--motion-easing), box-shadow var(--motion-duration) var(--motion-easing);
+}
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
 /* Dark mode styles for ProjectCard */
 body[data-theme='dark'] .project-card {
   background-color: var(--card-background);

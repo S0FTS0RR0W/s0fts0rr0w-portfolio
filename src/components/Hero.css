@@ -9,6 +9,19 @@
   position: relative;
 }
 
+/* Subtle entrance animation for hero */
+.hero-section .animated-name,
+.hero-section .typewriter-text {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--motion-duration-slow) var(--motion-easing), transform var(--motion-duration-slow) var(--motion-easing);
+}
+.hero-section.revealed .animated-name,
+.hero-section.revealed .typewriter-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .lead {
   color: var(--primary-color); /* Use theme variable */
 }

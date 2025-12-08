@@ -166,13 +166,33 @@
   padding: 0; /* Padding will be handled by max-height transition */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
   border-top: 1px solid var(--border-color);
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease-out, background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  transition: opacity var(--motion-duration-slow) var(--motion-easing), transform var(--motion-duration-slow) var(--motion-easing), background-color var(--motion-duration) var(--motion-easing);
+  transform-origin: top center;
 }
 
 .test-menu.open {
-  max-height: 500px; /* Adjust based on content height */
   opacity: 1;
+  transform: translateY(0);
   padding: 1rem 0;
+}
+
+/* Initial hidden transform for animation */
+.test-menu {
+  transform: translateY(-6px);
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  animation: fadeIn var(--motion-duration) var(--motion-easing) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .test-nav-list {
@@ -196,24 +216,57 @@
   transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
 }
 
-.test-nav-list a:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  transform: scale(1.05);
+/* Underline effect instead of highlight */
+.test-nav-list a {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  border-radius: 6px;
+  transition: color 0.2s ease, transform 0.12s ease;
+}
+
+.test-nav-list a::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 6px;
+  height: 2px;
+  background: var(--primary-color);
+  width: 0%;
+  transition: width 220ms ease;
+  border-radius: 2px;
+}
+
+.test-nav-list a:hover::after,
+.test-nav-list a:focus::after,
+.test-nav-list a:active::after {
+  width: 76%;
+}
+
+.test-nav-list a:hover,
+.test-nav-list a:focus {
+  color: var(--primary-color);
+  transform: none;
 }
 
 /* Dark mode burger menu link styles for hover animation */
 body[data-theme='dark'] .test-nav-list a {
-  background-color: transparent; /* Ensure no background color initially */
-  background-image: linear-gradient(to right, #266777, var(--primary-color));
-  background-size: 0% 100%; /* Start with zero width */
-  background-repeat: no-repeat;
-  transition: background-size 0.4s ease, transform 0.2s ease, color 0.3s ease;
+  background-color: transparent;
+  transition: color 0.2s ease;
 }
 
-body[data-theme='dark'] .test-nav-list a:hover {
-  background-size: 100% 100%; /* Expand to full width on hover */
-  color: #ffffff; /* Ensure text is white on gradient */
+/* Keep underline visible in dark mode with primary color */
+body[data-theme='dark'] .test-nav-list a::after {
+  background: var(--primary-color);
+}
+
+body[data-theme='dark'] .test-nav-list a:hover,
+body[data-theme='dark'] .test-nav-list a:focus {
+  color: var(--primary-color);
 }
 
 /* Desktop: show inline nav, hide burger */

@@ -71,7 +71,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
             <div className={`test-burger-line ${isMenuOpen ? 'open' : ''}`}></div>
           </button>
         </div>
-        <div className={`test-menu ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`test-menu ${isMenuOpen ? 'open' : ''}`} role="region" aria-hidden={!isMenuOpen}>
           <ul className="test-nav-list">
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
             <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
@@ -80,6 +80,9 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isMenuOpen, setIsMenuOpen
             <li><Link to="/discord-bot" onClick={handleLinkClick}>Summurai Discord Bot</Link></li>
           </ul>
         </div>
+        {isMenuOpen && (
+          <div className="menu-backdrop" onClick={() => setIsMenuOpen(false)} aria-hidden="true"></div>
+        )}
       </div>
     </nav>
   );
