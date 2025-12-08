@@ -12,3 +12,15 @@
 .app-footer a:hover {
   color: var(--primary-color);
 }
+
+@media (max-width: 600px) {
+  .app-footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .app-footer a {
+    display: inline-block;
+    margin: 0.25rem 0.5rem;
+  }
+}

@@ -16,6 +16,22 @@
   border-radius: 0; /* Ensure rectangular shape for all themes */
 }
 
+/* Make project images responsive */
+.project-card img,
+.project-card .card-img,
+.project-card .card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 /* Dark mode styles for ProjectCard */
 body[data-theme='dark'] .project-card {
   background-color: var(--card-background);

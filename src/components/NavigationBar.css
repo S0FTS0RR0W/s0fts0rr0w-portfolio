@@ -215,3 +215,58 @@ body[data-theme='dark'] .test-nav-list a:hover {
   background-size: 100% 100%; /* Expand to full width on hover */
   color: #ffffff; /* Ensure text is white on gradient */
 }
+
+/* Desktop: show inline nav, hide burger */
+@media (min-width: 768px) {
+  .test-burger-button {
+    display: none;
+  }
+
+  .test-menu {
+    position: static;
+    display: block;
+    max-height: none;
+    opacity: 1;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-top: none;
+  }
+
+  .test-nav-list {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .test-nav-list li {
+    margin: 0;
+  }
+
+  .test-nav-list a {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+  }
+
+  .test-navbar {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 767.98px) {
+  .test-navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .test-navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .test-menu {
+    left: 0;
+    right: 0;
+  }
+}

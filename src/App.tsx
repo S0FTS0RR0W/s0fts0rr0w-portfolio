@@ -19,6 +19,16 @@ function App() {
     document.title = './portfolio.sh';
   }, []);
 
+  useEffect(() => {
+    // Prevent background scrolling when mobile menu is open
+    if (isMenuOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+    return () => { document.body.classList.remove('no-scroll'); };
+  }, [isMenuOpen]);
+
   return (
     <ThemeProvider>
       <div className="App">

@@ -27,3 +27,13 @@
     font-size: 1rem;
     line-height: 1.6;
 }
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+  .about-section h2 { font-size: 1.6rem; }
+  .about-section .lead { font-size: 1rem; }
+  .about-section p { font-size: 0.95rem; }
+}

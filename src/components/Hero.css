@@ -103,3 +103,33 @@
 .btn:hover::after {
   width: 100%; /* underline expands left → right */
 }
+
+/* Responsive adjustments for hero */
+@media (max-width: 900px) {
+  .animated-name {
+    font-size: 3.2rem;
+  }
+  .typewriter-text {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: auto;
+    padding: 4rem 1rem;
+    align-items: center;
+  }
+  .animated-name {
+    font-size: 2.2rem;
+    white-space: normal;
+  }
+  .typewriter-text {
+    font-size: 1.6rem;
+    white-space: normal;
+  }
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}

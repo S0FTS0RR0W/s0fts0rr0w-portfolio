@@ -54,3 +54,36 @@ code {
 .theme-toggle-button:hover {
   opacity: 0.8;
 }
+
+/* Responsive base and fluid type scaling */
+html {
+  font-size: 16px; /* Base for rem calculations */
+}
+
+@media (max-width: 1200px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 900px) {
+  html { font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 13px; }
+  body { -webkit-tap-highlight-color: transparent; }
+}
+
+/* Utility: limit content width for very large viewports */
+.app-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Helper to disable scroll when mobile menu is open */
+.no-scroll {
+  overflow: hidden !important;
+  touch-action: none !important;
+}
