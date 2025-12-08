@@ -53,7 +53,7 @@ const Hero = () => {
   }, [displayedText, isDeleting, phraseIndex, phrases, typingSpeed, isPaused]);
 
   return (
-    <div className="hero-section" id="home">
+    <div className="hero-section reveal" id="home">
       <Container className="text-center">
         <h1 className={`display-3 typewriter-text ${isPaused ? 'blinking-cursor' : ''}`}>{displayedText}</h1>
         <p className="lead">Full-Stack Developer | React Enthusiast | TypeScript Fan</p>
