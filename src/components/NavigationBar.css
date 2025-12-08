@@ -168,6 +168,7 @@
   border-top: 1px solid var(--border-color);
   transition: opacity var(--motion-duration-slow) var(--motion-easing), transform var(--motion-duration-slow) var(--motion-easing), background-color var(--motion-duration) var(--motion-easing);
   transform-origin: top center;
+  z-index: 1002; /* Ensure menu appears above the header */
 }
 
 .test-menu.open {
@@ -185,7 +186,7 @@
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.28);
-  z-index: 999;
+  z-index: 1001; /* Sit between header (1000) and menu (1002) */
   backdrop-filter: blur(2px);
   animation: fadeIn var(--motion-duration) var(--motion-easing) forwards;
 }
