@@ -1,0 +1,64 @@
+/* src/components/WakatimeStats.css */
+
+#wakatime-stats {
+    padding: 60px 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#wakatime-stats h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--text-color);
+    text-shadow: 0 0 8px var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+#wakatime-stats .card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body[data-theme='dark'] #wakatime-stats .card {
+    box-shadow: 0 4px 8px var(--card-shadow-dark);
+}
+
+#wakatime-stats .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme='dark'] #wakatime-stats .card:hover {
+    box-shadow: 0 8px 16px var(--card-shadow-dark-hover);
+}
+
+#wakatime-stats .card-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#wakatime-stats .card-text.fs-4 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color);
+}
+
+/* Chart.js canvas styling */
+#wakatime-stats canvas {
+    margin-top: 1.5rem;
+}
+
+/* Ensure chart labels are visible in both themes */
+.chartjs-render-monitor {
+    color: var(--text-color) !important;
+}
+
+body[data-theme='dark'] .chartjs-render-monitor {
+    color: #f0f0f0 !important;
+}

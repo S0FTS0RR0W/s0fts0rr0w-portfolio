@@ -49,5 +49,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^1.13.2",
+    "chart": "^0.1.2",
+    "chart.js": "^4.5.1",
+    "react-chartjs-2": "^5.3.1"
   }
 }
